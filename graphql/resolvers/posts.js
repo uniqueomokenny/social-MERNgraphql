@@ -30,6 +30,7 @@ module.exports = {
       }
     }
   },
+
   Mutation: {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
@@ -43,6 +44,10 @@ module.exports = {
       });
 
       const post = await newPost.save();
+
+      context.pubsub.publish('NEW_POST', {
+        newPost: post
+      });
 
       return post;
     },
@@ -61,6 +66,12 @@ module.exports = {
 
         throw new Error(err);
       }
+    }
+  },
+
+  Subscription: {
+    newPost: {
+      subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_POST')
     }
   }
 };
