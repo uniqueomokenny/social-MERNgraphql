@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon start"
   },
   "keywords": [],
-  "author": "",
+  "author": "uniqueomokenny",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.9.16",
+    "bcryptjs": "^2.4.3",
     "graphql": "^14.5.8",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
