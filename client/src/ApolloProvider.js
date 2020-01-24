@@ -9,7 +9,7 @@ const httpLink = createHttpLink({
   uri: 'http://localhost:5000'
 });
 
-const client = new ApolloProvider({
+const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache()
 });

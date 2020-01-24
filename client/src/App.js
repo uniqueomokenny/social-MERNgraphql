@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 
-import { Container } from 'semantic-ui-react';
-
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
