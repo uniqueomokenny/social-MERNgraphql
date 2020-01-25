@@ -31,14 +31,22 @@ function PostForm() {
   }
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} style={{ marginBottom: '1.2rem' }}>
       <Header as='h2'>Create a post</Header>
+      {error && (
+        <div className='ui error message' style={{ display: 'block' }}>
+          <ul className='list'>
+            <li>{error.graphQLErrors[0].message}</li>
+          </ul>
+        </div>
+      )}
       <Form.Field>
         <Form.Input
           placeholder='Hi world'
           name='body'
           onChange={onChange}
           value={values.body}
+          error={error ? true : false}
         />
 
         <Button type='submit' color='teal'>
