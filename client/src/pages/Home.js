@@ -31,7 +31,7 @@ function Home() {
           <Header as='h1'>loading posts</Header>
         ) : (
           posts && (
-            <Transition.Group duration={200}>
+            <Transition.Group duration={500}>
               {posts.map(post => (
                 <Grid.Column key={post.id} style={{ marginBottom: '1.4rem' }}>
                   <PostCard post={post} />

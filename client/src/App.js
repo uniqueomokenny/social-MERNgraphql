@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import MenuBar from './components/MenuBar';
 import { AuthProvider } from './context/auth';
 import AuthRoute from './util/AuthRoute';
+import SinglePost from './pages/SinglePost';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <div className='ui container'>
           <MenuBar />
           <Route exact path='/' component={Home} />
+          <Route exact path='/posts/:postId' component={SinglePost} />
           <AuthRoute exact path='/register' component={Register} />
           <AuthRoute exact path='/login' component={Login} />
         </div>
